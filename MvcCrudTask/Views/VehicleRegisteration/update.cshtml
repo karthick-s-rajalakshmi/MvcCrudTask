@@ -1,0 +1,59 @@
+﻿@model DataAccessLayer.entity.VehicleDetail
+
+@{
+    ViewData["Title"] = "update";
+}
+
+<h1>update</h1>
+
+<h4>VehicleDetail</h4>
+<hr />
+<div class="Edit">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="vehicleId" />
+            <div class="form-group">
+                <label asp-for="vehicleName" class="control-label"></label>
+                <input asp-for="vehicleName" class="form-control" />
+                <span asp-validation-for="vehicleName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="vehicleNumber" class="control-label"></label>
+                <input asp-for="vehicleNumber" class="form-control" />
+                <span asp-validation-for="vehicleNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InsuranceNumber" class="control-label"></label>
+                <input asp-for="InsuranceNumber" class="form-control" />
+                <span asp-validation-for="InsuranceNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DriverContactNumber" class="control-label"></label>
+                <input asp-for="DriverContactNumber" class="form-control" />
+                <span asp-validation-for="DriverContactNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FCdate" class="control-label"></label>
+                <input asp-for="FCdate" class="form-control" />
+                <span asp-validation-for="FCdate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OwnerName" class="control-label"></label>
+                <input asp-for="OwnerName" class="form-control" />
+                <span asp-validation-for="OwnerName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="List">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

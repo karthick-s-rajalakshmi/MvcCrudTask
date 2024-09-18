@@ -1,0 +1,71 @@
+﻿@model IEnumerable<DataAccessLayer.entity.VehicleDetail>
+
+@{
+    ViewData["Title"] = "DisplayDetail";
+}
+
+<h1>DisplayDetail</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.vehicleId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.vehicleName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.vehicleNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InsuranceNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DriverContactNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FCdate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OwnerName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.vehicleId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.vehicleName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.vehicleNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InsuranceNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DriverContactNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FCdate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OwnerName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {  vehicleName=item.vehicleName }) |
+                @Html.ActionLink("Details", "Details", new { vehicleName = item.vehicleName }) |
+                @Html.ActionLink("Delete", "Delete", new { vehicleName = item.vehicleName })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
